@@ -54,6 +54,7 @@ myLayout = $('#optional-container').layout();
 addThemeSwitcher('.ui-layout-north',{ top: '13px', right: '20px' });
 });
 </script>
+<g:set var="entityName" value="${message(code: 'new.label', default: 'New')}" />
 
   <g:set var="entityName" value="${message(code: 'new.label', default: 'People')}" />
   <g:set var="entityName2" value="${message(code: 'new.label', default: 'City')}" />
@@ -98,7 +99,16 @@ Large School Consortium Institution Profile
                                     <label for="lastName"><g:message code="new.lastName.label" default="Last Name" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: newInstance, field: 'lastName', 'errors')}">
-                                    <g:textField name="lastName"  id ="datepicker" value="${newInstance?.lastName}" />
+                                    <g:textField name="lastName" value="${newInstance?.lastName}" />
+                                </td>
+                            </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="someDate"><g:message code="new.someDate.label" default="Some Date" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: newInstance, field: 'someDate', 'errors')}">
+                                    <g:textField name="someDate" id="datepicker" value="${newInstance?.someDate}"  />
                                 </td>
                             </tr>
                         
@@ -131,6 +141,8 @@ Large School Consortium Institution Profile
                         
                             <g:sortableColumn property="lastName" title="${message(code: 'new.lastName.label', default: 'Last Name')}" />
                         
+                            <g:sortableColumn property="someDate" title="${message(code: 'new.someDate.label', default: 'Some Date')}" />
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -141,6 +153,8 @@ Large School Consortium Institution Profile
                             <td>${fieldValue(bean: newInstance, field: "firstName")}</td>
                         
                             <td>${fieldValue(bean: newInstance, field: "lastName")}</td>
+                            
+                            <td>${fieldValue(bean: newInstance, field: "someDate")}</td>
                      </tr> 
                        
                     </g:each>

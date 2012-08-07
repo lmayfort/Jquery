@@ -7,6 +7,12 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'new.label', default: 'New')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <script>
+        $(function() {
+	$( "#datepicker" ).datepicker();
+        </script>
+});
+
     </head>
     <body>
         <div class="nav">
@@ -43,6 +49,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: newInstance, field: 'lastName', 'errors')}">
                                     <g:textField name="lastName" value="${newInstance?.lastName}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="someDate"><g:message code="new.someDate.label" default="Some Date" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: newInstance, field: 'someDate', 'errors')}">
+                                    <g:textField name="someDate" id="datepicker" value="${newInstance?.someDate}"  />
                                 </td>
                             </tr>
                         

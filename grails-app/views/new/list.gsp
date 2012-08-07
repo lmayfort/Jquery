@@ -28,6 +28,8 @@
                         
                             <g:sortableColumn property="lastName" title="${message(code: 'new.lastName.label', default: 'Last Name')}" />
                         
+                            <g:sortableColumn property="someDate" title="${message(code: 'new.someDate.label', default: 'Some Date')}" />
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -41,12 +43,16 @@
                         
                             <td>${fieldValue(bean: newInstance, field: "lastName")}</td>
                         
+                            <td>${fieldValue(bean: newInstance, field: "someDate")}</td>
+                        
                         </tr>
                     </g:each>
                     </tbody>
                 </table>
             </div>
-           
+            <div class="paginateButtons">
+                <g:paginate total="${newInstanceTotal}" />
+            </div>
         </div>
     </body>
 </html>

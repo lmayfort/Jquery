@@ -49,6 +49,15 @@
                                 </td>
                             </tr>
                         
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="someDate"><g:message code="new.someDate.label" default="Some Date" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: newInstance, field: 'someDate', 'errors')}">
+                                    <g:datePicker name="someDate" precision="day" value="${newInstance?.someDate}"  />
+                                </td>
+                            </tr>
+                        
                         </tbody>
                     </table>
                 </div>

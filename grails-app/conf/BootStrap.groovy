@@ -18,9 +18,9 @@ class BootStrap {
           new Tab(name: 'Robert Kerwin', city: 'Albuquerque').save()
        }  
       if (New.count() == 0 ){
-          new New(firstName: 'Betty', lastName:'Rubble').save()
-          new New(firstName:  'Wilma', lastName: 'Flintstone').save()
-          new New(firstName: 'Fred', lastName: 'Flintstone').save()
+          new New(firstName: 'Betty', lastName:'Rubble', someDate:'8/1/2012').save()
+          new New(firstName:  'Wilma', lastName: 'Flintstone', someDate:'8/1/2012').save()
+          new New(firstName: 'Fred', lastName: 'Flintstone', someDate:'8/1/2012').save()
       }
    }
   
